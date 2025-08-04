@@ -1,0 +1,38 @@
+/* Footer.css */
+footer {
+  background: linear-gradient(135deg, #1e1e2f, #2e2e48);
+  color: #f1f1f1;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid #444;
+}
+
+footer p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+footer p a {
+  color: #fcbf49;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer p a:hover {
+  color: #ff9900;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  footer {
+    padding: 20px 10px;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+}
