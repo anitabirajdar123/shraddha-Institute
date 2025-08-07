@@ -1,0 +1,217 @@
+#franchise {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.container {
+  max-width: 1900px;
+  margin: 0 auto;
+}
+
+/* Section Title & Subtitle */
+.section-title {
+  font-weight: 900;
+  font-size: 3rem;
+  color: #ea580c;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 5px rgba(234, 88, 12, 0.35);
+}
+
+.section-subtitle {
+  font-size: 1.3rem;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Left Side - Why Partner */
+.why-partner {
+  background: #fff7ed;
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.15);
+}
+
+.subheading {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #b45309;
+  margin-bottom: 2rem;
+  border-left: 6px solid #ea580c;
+  padding-left: 15px;
+  box-shadow: 1px 1px 5px rgba(234, 88, 12, 0.25);
+  background: #fff9f1;
+  border-radius: 6px;
+}
+
+/* Partner points */
+.partner-points {
+  margin-top: 1rem;
+}
+
+.partner-points .point {
+  margin-bottom: 1.8rem;
+  padding: 15px 20px;
+  border-left: 6px solid #ea580c;
+  background-color: #fff9f1;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgb(234 88 12 / 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.partner-points .point:hover {
+  transform: translateX(8px);
+  box-shadow: 0 10px 25px rgb(234 88 12 / 0.25);
+}
+
+.partner-points h4 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #9a3412;
+  margin-bottom: 0.5rem;
+}
+
+.partner-points p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Right Side - Franchise Package */
+.franchise-package {
+  background: linear-gradient(135deg, #ffedd5, #fed7aa);
+  box-shadow: 0 8px 20px rgba(254, 215, 170, 0.5);
+  border-radius: 20px;
+  padding: 3rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.franchise-package .subheading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.package-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.package-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #fff9f1;
+  box-shadow: 0 3px 8px rgba(234, 88, 12, 0.1);
+  transition: background-color 0.3s ease;
+  cursor: default;
+}
+
+.package-item:hover {
+  background-color: #ffedd5;
+}
+
+.check-icon {
+  width: 28px;
+  height: 28px;
+  background-color: #ea580c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease;
+}
+
+.package-item:hover .check-icon {
+  background-color: #d9480f;
+}
+
+.package-item span {
+  font-size: 1.05rem;
+  color: #4b5563;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+/* NEW Badge */
+.badge-new {
+  background-color: #d9480f;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 12px;
+  margin-left: 10px;
+  vertical-align: middle;
+  box-shadow: 0 2px 6px rgba(217, 72, 15, 0.5);
+  user-select: none;
+}
+
+/* Button */
+.btn-franchise {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ea580c;
+  color: white;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 16px 0;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(234, 88, 12, 0.6);
+  transition: background-color 0.3s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  user-select: none;
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto 0;
+}
+
+.btn-franchise:hover {
+  background-color: #c2410c;
+  box-shadow: 0 8px 25px rgba(196, 65, 12, 0.8);
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .why-partner,
+  .franchise-package {
+    margin-bottom: 3rem;
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+  }
+
+  .btn-franchise {
+    max-width: 100%;
+  }
+}

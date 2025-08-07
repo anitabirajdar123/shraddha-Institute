@@ -1,0 +1,78 @@
+.programs-section {
+  padding: 100px 0;
+  background: linear-gradient(to bottom right, #fffaf5, #fffefb);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ff6600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.program-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(255, 102, 0, 0.08);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+.program-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 45px rgba(255, 102, 0, 0.2);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #ff6600, #ffa31a);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.program-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.program-card p {
+  font-size: 0.95rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.program-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.program-card li {
+  display: flex;
+  align-items: center;
+  color: #444;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.icon-check {
+  color: #ff6600;
+  margin-right: 10px;
+}

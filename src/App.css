@@ -1,0 +1,33 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+
+.text-orange {
+  color: #ff6600 !important;
+}
+
+.bg-orange {
+  background-color: #ff6600 !important;
+}
+
+.btn-orange {
+  background-color: #ff6600;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: all 0.3s;
+}
+
+.btn-orange:hover {
+  background-color: #e65100;
+  color: #fff;
+}
+
+h2.section-title {
+  color: #ff6600;
+  font-weight: bold;
+  margin-bottom: 30px;
+}

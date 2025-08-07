@@ -1,0 +1,19 @@
+.bg-orange {
+  background-color: #ff6600;
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffd699;
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}

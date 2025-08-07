@@ -1,0 +1,114 @@
+/* Hero.css */
+
+.hero-slider-section {
+  position: relative;
+  background: #fff;
+  padding: 100px 0;
+  min-height: 20vh;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.floating-icons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-icon {
+  position: absolute;
+  bottom: 0;               /* Start at bottom */
+ width: 100px;             /* increased size */
+  height: 100px;
+  object-fit: contain;
+  opacity: 0.5;
+  animation: floatUp 10s linear infinite;
+  animation-delay: calc(var(--i) * 0.4s);
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+/* Hero Text Styling */
+
+.hero-title {
+  font-weight: 900;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #222;
+  text-shadow: 2px 2px 8px rgba(255, 102, 0, 0.4);
+  letter-spacing: 1.5px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.highlight-orange {
+  color: #ff6600;
+  text-shadow: 2px 2px 12px rgba(255, 102, 0, 0.7);
+  transition: color 0.3s ease;
+}
+
+.highlight-orange:hover {
+  color: #e65c00;
+}
+
+.lead {
+  font-size: 1.25rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 480px;
+  animation: fadeInUp 1.5s ease forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+/* Buttons */
+
+.btn-orange {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  border: none;
+  font-size: 1.1rem;
+  box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: #e65c00;
+  box-shadow: 0 8px 20px rgba(230, 92, 0, 0.6);
+}
+
+.btn-outline-orange {
+  background-color: transparent;
+  color: #ff6600;
+  border: 2px solid #ff6600;
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-outline-orange:hover {
+  background-color: #ff6600;
+  color: #fff;
+}
