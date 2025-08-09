@@ -1,6 +1,6 @@
-/* Background wrapper for full-width orange section */
+/* Background */
 .about-section-bg {
-  background-color: #fff0e0;
+  background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 100%);
   padding: 4rem 0;
 }
 
@@ -8,147 +8,109 @@
 .about-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   padding: 0 1rem;
-  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Section title */
-.section-title {
+.section-title2 {
   font-weight: 700;
   font-size: 2.5rem;
   color: #ff6600;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Layout row */
+.section-subtitle {
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+/* Layout row - side by side */
 .about-row {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3rem;
 }
 
-/* Two columns */
+/* Two equal columns */
 .about-col {
-  flex: 1 1 48%;
-  min-width: 300px;
+  flex: 1;
+  min-width: 0;
+}
+
+.mission-col {
+  padding-right: 2rem;
+  border-right: 1px solid #eee;
+}
+
+.impact-col {
+  padding-left: 2rem;
 }
 
 /* Titles */
-.mission-vision-title {
-  font-weight: 800;
-  font-size: 2rem;
-  color: #cc5200;
-  border-left: 6px solid #28a745;
-  padding-left: 1rem;
-  margin-bottom: 2rem;
-  display: flex;
-  align-items: center;
-}
-
-.info-title {
-  font-weight: 800;
-  font-size: 2rem;
+.impact-title {
+  font-weight: 600;
+  font-size: 1.8rem;
   color: #ff6600;
-  border-bottom: 3px solid #ff6600;
-  padding-bottom: 0.3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #ff9933;
 }
 
-/* Mission & Impact list items */
-.mission-vision-list p,
-.info-list p {
-  font-size: 1.15rem;
+/* Lists */
+.mission-vision-list,
+.impact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mission-vision-line,
+.impact-line {
+  font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
   display: flex;
   align-items: flex-start;
-  opacity: 0;
-  transform: translateX(-30px);
-  animation-fill-mode: forwards;
-  animation-duration: 0.7s;
-  animation-timing-function: ease-out;
 }
 
 /* Icons */
 .check-icon {
-  color: #28a745;
+  color: #ff6600;
   margin-right: 12px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
-}
-
-/* Mission bubble style (orange version) */
-.vision-bubble {
-  background: linear-gradient(90deg, #ffe6cc 0%, #fff8f0 100%);
-  padding: 1rem 1.2rem;
-  border-left: 5px solid #ff8c42;
-  border-radius: 10px;
-  font-style: italic;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  position: relative;
-}
-
-.vision-bubble::before {
-  content: "“";
-  font-size: 2.5rem;
-  color: #ff8c42;
-  position: absolute;
-  top: -10px;
-  left: -15px;
-  opacity: 0.2;
-}
-
-/* Fade animation for lines */
-@keyframes fadeSlideRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.fade-in-sequential {
-  animation-name: fadeSlideRight;
-}
-
-/* Fade-up animation for columns */
-@keyframes fadeSlideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-in {
-  animation: fadeSlideUp 0.8s ease forwards;
+  margin-top: 3px;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .about-row {
     flex-direction: column;
+    gap: 2rem;
   }
-
-  .mission-vision-title,
-  .info-title {
-    text-align: center;
-    justify-content: center;
+  
+  .mission-col {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
   }
-
-  .mission-vision-list p,
-  .info-list p {
-    justify-content: center;
-    text-align: center;
+  
+  .impact-col {
+    padding-left: 0;
+    padding-top: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.3rem;
   }
 }

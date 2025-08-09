@@ -14,7 +14,7 @@ const Programs = () => {
     <section id="programs" className="programs-section">
       <div className="container">
         <div className="text-center mb-5">
-          <h2 className="section-title">🎓 Our Programs</h2>
+          <h2 className="section-title1">🎓 Our Programs</h2>
           <p className="section-subtitle">
             Explore learning paths designed to spark joy and confidence in math!
           </p>
@@ -51,10 +51,10 @@ const Programs = () => {
                 Fast tricks from ancient India – ideal for exams & quick calculations.
               </p>
               <ul>
-                <li><Check size={16} className="icon-check" /> 16 Speed Sutras</li>
+                <li><Check size={16} className="icon-check" /> 8 Learning Levels </li>
                 <li><Check size={16} className="icon-check" /> Solve in Seconds</li>
                 <li><Check size={16} className="icon-check" /> Great for Olympiads</li>
-                <li><Check size={16} className="icon-check" /> Ages 8+</li>
+                <li><Check size={16} className="icon-check" /> Ages 13+</li>
               </ul>
             </div>
           </div>

@@ -1,32 +1,77 @@
 .demo-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(270deg, #fff3e6, #ffe0b3, #fff3e6);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
   padding: 5rem 1rem;
-  background-color: #fff8f0;
-  text-align: center;
   border-radius: 30px;
   margin: 2rem 1rem;
+  box-shadow: 0 4px 10px rgba(255, 182, 82, 0.15);
+  color: #5c3a00;
+  z-index: 0;
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+.demo-section::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 107, 0, 0.15);
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  z-index: 0;
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+.demo-flex-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center content horizontally */
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.demo-flex-container.single-content {
+  justify-content: center; /* center single content */
+  text-align: center;
 }
 
 .demo-content {
   max-width: 700px;
-  margin: 0 auto;
   padding: 1rem;
+  color: #5c3a00;
 }
 
 .demo-content h2 {
-  color: #ff6b00;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   margin-bottom: 1rem;
   font-family: 'Poppins', sans-serif;
+  color: #ff6b00;
 }
 
 .demo-content p {
   font-size: 1.1rem;
-  color: #555;
+  color: #5c3a00;
   margin-bottom: 2rem;
   font-family: 'Segoe UI', sans-serif;
 }
 
 .demo-btn {
+  position: relative;
+  overflow: hidden;
   background-color: #ff6b00;
   color: #fff;
   padding: 1rem 2rem;
@@ -36,8 +81,42 @@
   border-radius: 12px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(255, 107, 0, 0.4);
 }
 
 .demo-btn:hover {
   background-color: #e55b00;
+}
+
+.demo-btn::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.5);
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s, opacity 1s;
+}
+
+.demo-btn:active::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  transition: 0s;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .demo-flex-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .demo-content {
+    max-width: 100%;
+  }
 }

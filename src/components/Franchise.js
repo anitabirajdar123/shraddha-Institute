@@ -1,26 +1,7 @@
 import React, { useState } from "react";
-import { Check } from "lucide-react";
-import { motion } from "framer-motion";
+import { Check, ChevronRight, Star, Award, Shield, TrendingUp } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import "./Franchise.css";
-
-// Animation variants
-const fadeInLeft = {
-  hidden: { opacity: 0, x: -50 },
-  visible: (i) => ({
-    opacity: 1,
-    x: 0,
-    transition: { delay: i * 0.3 },
-  }),
-};
-
-const fadeInRight = {
-  hidden: { opacity: 0, x: 50 },
-  visible: (i) => ({
-    opacity: 1,
-    x: 0,
-    transition: { delay: i * 0.3 },
-  }),
-};
 
 const Franchise = () => {
   const [showPackage, setShowPackage] = useState(false);
@@ -29,120 +10,200 @@ const Franchise = () => {
     {
       title: "Low Investment, High Returns",
       desc: "Start your education business with minimal investment and proven profitability models.",
+      icon: <TrendingUp size={24} />
     },
     {
       title: "Complete Training & Support",
       desc: "Comprehensive training programs, marketing support, and ongoing business guidance.",
+      icon: <Award size={24} />
     },
     {
       title: "Proven Curriculum",
       desc: "Time-tested teaching materials and methodologies with excellent student outcomes.",
+      icon: <Shield size={24} />
     },
     {
       title: "Brand Recognition",
       desc: "Benefit from our established brand reputation and marketing expertise.",
+      icon: <Star size={24} />
     },
   ];
 
   const franchisePackage = [
-    { text: "Complete Teacher Training Certification" },
-    { text: "Student Learning Materials & Books" },
-    { text: "Marketing & Promotional Materials" },
+    { text: "Complete Teacher Training Certification", isNew: false },
+    { text: "Student Learning Materials & Books", isNew: false },
+    { text: "Marketing & Promotional Materials", isNew: false },
     { text: "Online Learning Management System", isNew: true },
-    { text: "Business Setup & Operations Guide" },
-    { text: "Ongoing Support & Updates" },
+    { text: "Business Setup & Operations Guide", isNew: false },
+    { text: "Ongoing Support & Updates", isNew: false },
     { text: "Exclusive Access to New Course Launches", isNew: true },
     { text: "Monthly Webinars with Industry Experts", isNew: true },
   ];
 
   return (
-    <section id="franchise" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="franchise" className="franchise-section">
+      <div className="container">
         <motion.div
-          className="text-center mb-16"
+          className="section-header"
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
         >
-          <h2 className="section-title">Franchise Opportunity</h2>
+          <h2 className="section-title">
+            <span className="title-highlight">Franchise</span> Opportunity
+          </h2>
           <p className="section-subtitle">
             Join our growing network of successful education entrepreneurs and
             make a difference in your community.
           </p>
+          <div className="divider"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-          {/* Left side */}
-          <motion.div
-            className="why-partner"
-            initial="hidden"
-            whileInView="visible"
+        <div className="content-grid">
+          {/* Left side - Why Partner */}
+          <motion.div 
+            className="partner-card"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            custom={0}
-            variants={fadeInLeft}
           >
-            <h3 className="subheading">Why Partner With Us?</h3>
-            <div className="partner-points">
+            <div className="card-header">
+              <h3 className="subheading">
+                Why Partner <span className="highlight">With Us?</span>
+              </h3>
+              <div className="icon-wrapper">
+                <HandshakeIcon />
+              </div>
+            </div>
+            
+            <div className="benefits-list">
               {partnerPoints.map((item, i) => (
                 <motion.div
                   key={i}
-                  className="point"
-                  custom={i + 1}
-                  variants={fadeInLeft}
+                  className="benefit-item"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: i * 0.15 + 0.3 }}
+                  viewport={{ once: true, margin: "-50px" }}
                 >
-                  <h4>{item.title}</h4>
-                  <p>{item.desc}</p>
+                  <div className="benefit-icon">
+                    {item.icon}
+                  </div>
+                  <div className="benefit-content">
+                    <h4>{item.title}</h4>
+                    <p>{item.desc}</p>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </motion.div>
 
-          {/* Right side */}
-          <motion.div
-  className="franchise-package"
-  initial="hidden"
-  animate={showPackage ? "visible" : "hidden"}
-  variants={fadeInRight}
->
-  {showPackage && (
-    <>
-      <h3 className="subheading text-center">
-        Franchise Package Includes
-      </h3>
-      <div className="package-list">
-        {franchisePackage.map((item, i) => (
-          <motion.div
-            key={i}
-            className="package-item"
-            custom={i + 1}
-            variants={fadeInRight}
+          {/* Right side - Package */}
+          <motion.div 
+            className="package-card"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
           >
-            <div className="check-icon">
-              <Check size={16} color="white" />
-            </div>
-            <span>
-              {item.text}
-              {item.isNew && <span className="badge-new">NEW</span>}
-            </span>
+            <AnimatePresence>
+              {showPackage ? (
+                <motion.div
+                  className="package-content"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  key="package-details"
+                >
+                  <h3 className="subheading">
+                    Franchise <span className="highlight">Package</span>
+                  </h3>
+                  
+                  <div className="package-list">
+                    {franchisePackage.map((item, i) => (
+                      <motion.div
+                        key={i}
+                        className="package-item"
+                        initial={{ opacity: 0, x: 20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.3, delay: i * 0.1 }}
+                      >
+                        <div className="check-wrapper">
+                          <Check size={18} />
+                        </div>
+                        <span>
+                          {item.text}
+                          {item.isNew && <span className="new-badge">NEW</span>}
+                        </span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              ) : (
+                <motion.div
+                  className="package-preview"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                  key="package-preview"
+                >
+                  <h3>Ready to Start Your Journey?</h3>
+                  <p>Discover everything included in our comprehensive franchise package</p>
+                  <div className="preview-highlights">
+                    <span>Complete Training</span>
+                    <span>Marketing Support</span>
+                    <span>Ongoing Guidance</span>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
+            <button
+              className="cta-button"
+              onClick={() => setShowPackage(!showPackage)}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              {showPackage ? (
+                <>
+                  <span>Hide Details</span>
+                  <ChevronRight className="rotate-90" />
+                </>
+              ) : (
+                <>
+                  <span>View Package Details</span>
+                  <ChevronRight />
+                </>
+              )}
+            </button>
           </motion.div>
-        ))}
-      </div>
-    </>
-  )}
-
-  {/* Button always rendered, outside the conditional */}
-  <button
-    className="btn-franchise"
-    onClick={() => setShowPackage(!showPackage)}
-  >
-    {showPackage ? "Hide Package Details" : "Start Your Franchise Journey"}
-  </button>
-</motion.div>
-
         </div>
       </div>
     </section>
   );
 };
+
+// Custom handshake icon component
+const HandshakeIcon = () => (
+  <svg
+    width="48"
+    height="48"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M11 17l2 2a1 1 0 102 0l-3-3h1a2 2 0 002-2V5a2 2 0 00-2-2H9a2 2 0 00-2 2v9a2 2 0 002 2h1l-3 3a1 1 0 002 0l2-2" />
+    <path d="M16 12h.01" />
+    <path d="M13 12h.01" />
+    <path d="M10 12h.01" />
+  </svg>
+);
 
 export default Franchise;

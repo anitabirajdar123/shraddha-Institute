@@ -1,61 +1,82 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import './About.css';
+import { useInView } from 'react-intersection-observer';
 
-const missionVisionLines = [
-  "To empower young minds through innovative teaching and comprehensive learning experiences.",
-  "To foster critical thinking and creativity among students, preparing them for future challenges.",
-  "To cultivate an inclusive and nurturing environment for both students and educators.",
-];
+const About = () => {
+  const [missionRef, missionInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
 
-const infoLines = [
-  "Proud Partners with 50+ Schools",
-  "Facilitated 500+ Impactful Workshops across 20+ Cities",
-  "Empowered 15,000+ Students through Transformative Educational Programs",
-];
+  const [impactRef, impactInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true
+  });
 
-const About = () => (
-  <section className="about-section-bg" id="about">
-    <div className="about-wrapper">
-      <h2 className="section-title">About Us</h2>
+  const missionVisionLines = [
+    "To empower young minds through innovative teaching and comprehensive learning experiences.",
+    "To foster critical thinking and creativity among students, preparing them for future challenges.",
+    "To cultivate an inclusive and nurturing environment for both students and educators.",
+  ];
 
-      <div className="about-row">
-        {/* Mission & Vision */}
-        <div className="about-col mission-vision-col animate-in" style={{ animationDelay: '0.2s' }}>
-          <h3 className="mission-vision-title">🌱 Mission & Vision</h3>
-          <div className="mission-vision-list">
-            {missionVisionLines.map((line, i) => (
-              <p
-                key={i}
-                className="mission-vision-line fade-in-sequential vision-bubble"
-                style={{ animationDelay: `${i * 0.3 + 0.5}s` }}
-              >
-                <FaCheckCircle className="check-icon" />
-                {line}
-              </p>
-            ))}
+  const infoLines = [
+    "Proud Partners with 50+ Schools",
+    "Facilitated 500+ Impactful Workshops across 20+ Cities",
+    "Empowered 15,000+ Students through Transformative Educational Programs",
+  ];
+
+  return (
+    <section className="about-section-bg" id="about">
+      <div className="about-wrapper">
+        <h2 className="section-title2 animate-fade-in">About ShraddhaInstitute</h2>
+        <p className="section-subtitle animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          Our Mission & Vision
+        </p>
+
+        <div className="about-row">
+          {/* Mission & Vision - Left Side */}
+          <div 
+            ref={missionRef}
+            className={`about-col mission-col ${missionInView ? 'animate-slide-in-left' : ''}`}
+          >
+            <ul className="mission-vision-list">
+              {missionVisionLines.map((line, i) => (
+                <li 
+                  key={i} 
+                  className="mission-vision-line"
+                  style={{ transitionDelay: `${i * 0.15}s` }}
+                >
+                  <FaCheckCircle className="check-icon" />
+                  {line}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
 
-        {/* Our Impact */}
-        <div className="about-col info-col animate-in" style={{ animationDelay: '0.4s' }}>
-          <h3 className="info-title">Our Impact</h3>
-          <div className="info-list">
-            {infoLines.map((line, i) => (
-              <p
-                key={i}
-                className="info-line fade-in-sequential"
-                style={{ animationDelay: `${i * 0.3 + 1}s` }}
-              >
-                <FaCheckCircle className="check-icon" />
-                {line}
-              </p>
-            ))}
+          {/* Our Impact - Right Side */}
+          <div 
+            ref={impactRef}
+            className={`about-col impact-col ${impactInView ? 'animate-slide-in-right' : ''}`}
+          >
+            <h3 className="impact-title">Our Impact</h3>
+            <ul className="impact-list">
+              {infoLines.map((line, i) => (
+                <li 
+                  key={i} 
+                  className="impact-line"
+                  style={{ transitionDelay: `${i * 0.15 + 0.3}s` }}
+                >
+                  <FaCheckCircle className="check-icon" />
+                  {line}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default About;

@@ -7,6 +7,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // 👈 enables collapse/hamburger
+
 
 
 AOS.init();

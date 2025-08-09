@@ -1,64 +1,334 @@
+/* Training.css */
 .training-section {
-  padding: 5rem 1.5rem;
-  background-color: #fff8f0;
-  text-align: center;
-  border-radius: 40px;
-  margin: 2rem 1rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, #fff9f2 0%, #fff4e8 100%);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  height: 500%;
 }
 
-.training-content {
-  max-width: 850px;
-  margin: auto;
-  animation: fadeIn 1s ease;
+.training-section::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,107,0,0.1) 0%, rgba(255,107,0,0) 70%);
+  border-radius: 50%;
+}
+
+.training-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(230,81,0,0.08) 0%, rgba(230,81,0,0) 70%);
+  border-radius: 50%;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.training-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.training-text {
+  flex: 1 1 55%;
+  min-width: 300px;
+}
+
+.section-label {
+  display: inline-block;
+  background: rgba(255, 107, 0, 0.1);
+  color: #ff6b00;
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 .training-section h2 {
-  font-size: 2.5rem;
-  color: #ff7a00;
+  font-size: 2.8rem;
+  line-height: 1.2;
   margin-bottom: 1.5rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.training-section p {
-  font-size: 1.15rem;
   color: #333;
-  line-height: 1.8;
-  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
 }
 
-.training-benefits {
-  list-style: none;
-  padding: 0;
-  margin: 2rem 0 1.5rem;
+.gradient-text {
+  background: linear-gradient(90deg, #ff6b00 0%, #e65100 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline;
+}
+
+.lead-text {
+  font-size: 1.25rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.lead-text strong {
+  color: #e65100;
+  font-weight: 600;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.benefit-card {
+  background: white;
+  padding: 1.8rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(255, 107, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 107, 0, 0.1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.15);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+}
+
+.benefit-card h4 {
+  font-size: 1.2rem;
+  color: #ff6b00;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.benefit-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.cta-button {
+  background: linear-gradient(90deg, #ff6b00 0%, #e65100 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
   font-size: 1.1rem;
-  color: #444;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(230, 81, 0, 0.3);
 }
 
-.training-benefits li {
-  margin: 0.7rem 0;
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 81, 0, 0.4);
+}
+
+.arrow-icon {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+.training-animation-wrapper {
+  flex: 1 1 40%;
+  min-width: 300px;
+  position: relative;
+}
+
+.animation-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(255, 107, 0, 0.1);
+  border: 1px solid rgba(255, 107, 0, 0.1);
+}
+
+.training-animation {
+  max-width: 100%;
+  height: auto;
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  animation: float 4s ease-in-out infinite;
+}
+
+.badge-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.badge-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ff6b00;
+  line-height: 1;
+}
+
+.badge-text {
+  font-size: 0.9rem;
+  color: #666;
   font-weight: 500;
 }
 
-.highlight {
-  color: #e65100;
-  font-weight: bold;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
 }
 
-.call-to-action {
+/* Responsive Design */
+@media (max-width: 992px) {
+  .training-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .training-text, .training-animation-wrapper {
+    width: 100%;
+  }
+  
+  .training-section h2 {
+    font-size: 2.3rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .training-section {
+    padding: 4rem 1rem;
+  }
+  
+  .training-section h2 {
+    font-size: 2rem;
+  }
+  
+  .lead-text {
+    font-size: 1.1rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .floating-badge {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 1.5rem;
+    width: fit-content;
+  }
+}
+
+/* Animation Effects */
+[data-aos="fade-right"] {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease;
+}
+
+[data-aos="fade-right"].aos-animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+[data-aos="zoom-in"] {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: all 0.8s ease 0.3s;
+}
+
+[data-aos="zoom-in"].aos-animate {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Add these styles to your Training.css */
+
+.training-illustration-wrapper {
+  flex: 1 1 40%;
+  min-width: 300px;
+  position: relative;
+  text-align: center;
+}
+
+.training-illustration {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(255, 107, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.training-illustration:hover {
+  transform: scale(1.03);
+}
+
+/* Keep all your existing styles and just replace the animation-related ones */
+.compact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.compact-card {
+  padding: 1.2rem;
+  border-radius: 12px;
+  min-height: auto;
+}
+
+.compact-card .benefit-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.compact-card h4 {
   font-size: 1rem;
-  font-style: italic;
-  color: #666;
+  margin-bottom: 0.5rem;
 }
 
-/* Simple animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.compact-card p {
+  font-size: 0.85rem;
+  line-height: 1.4;
 }

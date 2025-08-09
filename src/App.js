@@ -735,6 +735,8 @@ import FreeDemo from "./components/FreeDemo";
 import Footer from "./components/Footer";
 import Info from "./components/Info";
 import 'aos/dist/aos.css';
+import DemoAndContact from "./components/DemoAndContact";
+import WhatsAppButton from "./components/WhatsAppButton"; // Add this import
 
 
 function App() {
@@ -748,9 +750,9 @@ function App() {
       <Franchise />
       <Training />
       <Gallery />
-      <ContactForm />
-      <FreeDemo />
+      <DemoAndContact />
       <Footer />
+          <WhatsAppButton /> {/* Add this line */}
     </div>
   );
 }
