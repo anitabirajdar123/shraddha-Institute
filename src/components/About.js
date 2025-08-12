@@ -29,7 +29,7 @@ const About = () => {
   return (
     <section className="about-section-bg" id="about">
       <div className="about-wrapper">
-        <h2 className="section-title2 animate-fade-in">About ShraddhaInstitute</h2>
+        <h2 className="section-title2 animate-fade-in">Shraddha Institute</h2>
         <p className="section-subtitle animate-fade-in" style={{ animationDelay: '0.2s' }}>
           Our Mission & Vision
         </p>

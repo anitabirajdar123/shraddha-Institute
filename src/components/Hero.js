@@ -1,55 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Lottie from 'lottie-react';
-import studentAnim from '../assets/lottie/education.json';
-import Abacus1 from '../assets/icons/abacus.png';
-import Abacus2 from '../assets/icons/Abacus.jpg';
-import Brain from '../assets/icons/brain.png';
-
+import educationAnim from '../assets/lottie/education.json';
 import './Hero.css';
 
-const icons = [Abacus1, Abacus2, Brain];
+// Import your background images
+import bg1 from '../assets/backgrounds/bg1.jpg';
+import bg2 from '../assets/backgrounds/bg2.jpg';
+import bg3 from '../assets/backgrounds/bg3.webp';
 
 const Hero = () => {
-  return (
-    <section className="hero-slider-section position-relative overflow-hidden" id="hero">
-      {/* Floating Image Icons */}
-      <div className="floating-icons">
-        {Array.from({ length: 30 }).map((_, i) => {
-          const icon = icons[i % icons.length];
-          return (
-            <img
-              key={i}
-              src={icon}
-              alt=""
-              className="floating-icon"
-              style={{
-                left: `${Math.random() * 100}%`,
-                '--i': i,
-              }}
-            />
-          );
-        })}
-      </div>
+  const [currentBg, setCurrentBg] = useState(0);
+  const backgrounds = [bg1, bg2, bg3];
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section className="hero-section" id="hero">
+      {/* Background Image Slider */}
+      <div className="hero-bg-slider" style={{ backgroundImage: `url(${backgrounds[currentBg]})` }}></div>
+      
+      {/* Content Overlay */}
+      <div className="hero-content-overlay"></div>
+      
       {/* Main Content */}
-      <div className="container position-relative" style={{ zIndex: 2 }}>
-        <div className="row align-items-center justify-content-center">
+      <div className="container position-relative">
+        <div className="row align-items-center">
           <div className="col-lg-6 text-center text-lg-start mb-4 mb-lg-0" data-aos="fade-right">
             <h1 className="hero-title mb-3">
-              Empowering <span className="highlight-orange">Young Minds</span><br />
-              and <span className="highlight-orange">Teachers</span> Together
+              <span className="highlight-orange">Master Abacus & Vedic Math</span><br />
+              <span className="highlight-white">Become a Certified Instructor</span>
             </h1>
-            <p className="lead mb-4">
-              Discover how Shraddha Institute builds brighter futures with <strong>Abacus</strong> & <strong>Vedic Math</strong>.
+            <p className="hero-subtitle mb-4">
+              Join India's premier <strong>teacher training institute</strong> for mental math excellence
             </p>
-            <div className="d-flex gap-3 justify-content-center justify-content-lg-start">
-              <a href="#contact" className="btn btn-orange">Join Now 🚀</a>
-              <a href="#demo" className="btn btn-outline-orange">Free Demo 🎓</a>
+            <div className="d-flex gap-3 flex-wrap">
+              <a href="#teacher-training" className="btn btn-orange">Teacher Training 🎓</a>
+              <a href="#student-programs" className="btn btn-white">Student Programs ✏️</a>
+             
             </div>
           </div>
 
-          <div className="col-lg-6 d-flex justify-content-center" data-aos="zoom-in">
-            <Lottie animationData={studentAnim} loop className="hero-lottie" />
+          <div className="col-lg-6" data-aos="zoom-in">
+            <Lottie 
+              animationData={educationAnim} 
+              loop 
+              className="hero-animation"
+            />
           </div>
         </div>
       </div>

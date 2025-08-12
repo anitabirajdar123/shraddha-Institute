@@ -69,7 +69,6 @@
 .divider {
   width: 80px;
   height: 4px;
-  background: linear-gradient(to right, #ea580c, #f97316);
   margin: 1.5rem auto;
   border-radius: 2px;
 }

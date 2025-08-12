@@ -1,0 +1,394 @@
+/* AboutUs.css */
+
+/* Base Styles */
+.about-page {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #f76b1c;
+  margin: 15px auto;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/gallery2.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: orangered;
+  color: orangered;
+  
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline:before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #f76b1c;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+  left: 0;
+}
+
+.timeline-item:nth-child(even) {
+  left: 50%;
+}
+
+.timeline-year {
+  background-color: #f76b1c;
+  color: white;
+  border-radius: 50%;
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-weight: bold;
+  top: 20px;
+  right: -40px;
+  z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+  left: -40px;
+}
+
+.timeline-content {
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+/* Founder Section */
+.founder-section {
+  background-color: #f9f9f9;
+  padding: 80px 0;
+}
+
+.founder-card {
+  display: flex;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.founder-image {
+  flex: 1;
+  position: relative;
+}
+
+.founder-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.founder-quote {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(247,107,28,0.9);
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-style: italic;
+  max-width: 80%;
+}
+
+.founder-message {
+  flex: 1;
+  padding: 40px;
+}
+
+.founder-message h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.signature {
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 20px;
+  color: #f76b1c;
+}
+
+.founder-credentials {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #666;
+}
+
+/* Methodology Section */
+.methodology-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.method-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.method-card:hover {
+  transform: translateY(-10px);
+}
+
+.method-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.method-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+/* Training Section */
+.training-section {
+  background: linear-gradient(135deg, #f76b1c 0%, #f9a825 100%);
+  color: white;
+  padding: 80px 0;
+}
+
+.training-content {
+  display: flex;
+  align-items: center;
+}
+
+.training-text {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.training-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.training-text ul {
+  margin: 30px 0;
+  padding-left: 20px;
+}
+
+.training-text li {
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.training-image {
+  flex: 1;
+}
+
+.training-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* Stats Section */
+.stats-section {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+}
+
+.stat-item {
+  background: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.stat-number {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: #f76b1c;
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 80px 0;
+  text-align: center;
+  background: #2c3e50;
+  color: white;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta-section p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.cta-button.primary {
+  background: #f76b1c;
+  color: white;
+}
+
+.cta-button.secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .timeline:before {
+    left: 31px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  .timeline-item:nth-child(even) {
+    left: 0;
+  }
+  
+  .timeline-year {
+    left: 0 !important;
+  }
+  
+  .founder-card {
+    flex-direction: column;
+  }
+  
+  .training-content {
+    flex-direction: column;
+  }
+  
+  .training-text {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

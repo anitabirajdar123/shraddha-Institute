@@ -1,49 +1,17 @@
 import React, { useState } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import './DemoAndContact.css';
 import studentImg from '../assets/student.png';
 
 const DemoAndContact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
-  const [errors, setErrors] = useState({});
   const [activeField, setActiveField] = useState(null);
+
+  // Replace "xldlawgo" with your actual Formspree form ID
+  const [state, handleSubmit] = useForm("xldlawgo");
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const validate = () => {
-    const errs = {};
-    if (!formData.name.trim()) errs.name = 'Name is required';
-    if (!formData.email.trim()) {
-      errs.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      errs.email = 'Please enter a valid email';
-    }
-    if (!formData.phone.trim()) {
-      errs.phone = 'Phone number is required';
-    } else if (!/^\d{10}$/.test(formData.phone)) {
-      errs.phone = 'Please enter a valid 10-digit number';
-    }
-    if (!formData.message.trim()) errs.message = 'Message is required';
-    return errs;
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const errs = validate();
-    setErrors(errs);
-
-    if (Object.keys(errs).length === 0) {
-      // Here you would typically send the data to your backend
-      console.log('Form submitted:', formData);
-      setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', message: '' });
-
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 4000);
-    }
   };
 
   return (
@@ -55,21 +23,22 @@ const DemoAndContact = () => {
           <p className="subtitle">Have questions? We're here to help guide your learning journey</p>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+        <form className="contact-form" onSubmit={handleSubmit}>
           <div className={`form-group ${activeField === 'name' ? 'active' : ''}`}>
             <label htmlFor="name">Your Name</label>
             <input
               id="name"
               name="name"
-              className={`form-control ${errors.name ? 'error' : ''}`}
               type="text"
+              className="form-control"
               value={formData.name}
               onChange={handleChange}
               onFocus={() => setActiveField('name')}
               onBlur={() => setActiveField(null)}
-              disabled={submitted}
+              disabled={state.submitting}
+              required
             />
-            {errors.name && <span className="error-msg">{errors.name}</span>}
+            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </div>
 
           <div className={`form-group ${activeField === 'email' ? 'active' : ''}`}>
@@ -77,15 +46,16 @@ const DemoAndContact = () => {
             <input
               id="email"
               name="email"
-              className={`form-control ${errors.email ? 'error' : ''}`}
               type="email"
+              className="form-control"
               value={formData.email}
               onChange={handleChange}
               onFocus={() => setActiveField('email')}
               onBlur={() => setActiveField(null)}
-              disabled={submitted}
+              disabled={state.submitting}
+              required
             />
-            {errors.email && <span className="error-msg">{errors.email}</span>}
+            <ValidationError prefix="Email" field="email" errors={state.errors} />
           </div>
 
           <div className={`form-group ${activeField === 'phone' ? 'active' : ''}`}>
@@ -93,15 +63,16 @@ const DemoAndContact = () => {
             <input
               id="phone"
               name="phone"
-              className={`form-control ${errors.phone ? 'error' : ''}`}
               type="tel"
+              className="form-control"
               value={formData.phone}
               onChange={handleChange}
               onFocus={() => setActiveField('phone')}
               onBlur={() => setActiveField(null)}
-              disabled={submitted}
+              disabled={state.submitting}
+              required
             />
-            {errors.phone && <span className="error-msg">{errors.phone}</span>}
+            <ValidationError prefix="Phone" field="phone" errors={state.errors} />
           </div>
 
           <div className={`form-group ${activeField === 'message' ? 'active' : ''}`}>
@@ -109,34 +80,29 @@ const DemoAndContact = () => {
             <textarea
               id="message"
               name="message"
-              className={`form-control ${errors.message ? 'error' : ''}`}
+              className="form-control"
               rows="4"
               value={formData.message}
               onChange={handleChange}
               onFocus={() => setActiveField('message')}
               onBlur={() => setActiveField(null)}
-              disabled={submitted}
+              disabled={state.submitting}
+              required
             ></textarea>
-            {errors.message && <span className="error-msg">{errors.message}</span>}
+            <ValidationError prefix="Message" field="message" errors={state.errors} />
           </div>
 
-          <button 
-            type="submit" 
-            className={`submit-btn ${submitted ? 'success' : ''}`}
-            disabled={submitted}
-          >
-            {submitted ? (
-              <>
-                <svg className="checkmark" viewBox="0 0 52 52">
-                  <circle className="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
-                  <path className="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                </svg>
-                Message Sent!
-              </>
-            ) : (
-              'Send Message'
-            )}
-          </button>
+          {state.succeeded ? (
+            <p className="success-message">✅ Thank you! We'll be in touch soon.</p>
+          ) : (
+            <button
+              type="submit"
+              className={`submit-btn ${state.submitting ? 'submitting' : ''}`}
+              disabled={state.submitting}
+            >
+              {state.submitting ? 'Sending...' : 'Send Message'}
+            </button>
+          )}
         </form>
       </div>
 
@@ -144,15 +110,14 @@ const DemoAndContact = () => {
       <div className="demo-section">
         <div className="demo-card">
           <div className="demo-content">
-            <div className="demo-badge">Limited Seats</div>
+            <div className="demo-badge"></div>
             <h2>
               <span className="emoji">🎓</span>
-              Free Demo Class
+  <span className="orange-text">Free Demo Class</span>
             </h2>
             <p className="demo-text">
               Experience our unique teaching methodology first-hand. Book a no-obligation demo session today!
             </p>
-           
             <button className="demo-btn">
               Book Your Free Session
               <span className="btn-arrow">→</span>

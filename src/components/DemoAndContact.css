@@ -63,6 +63,14 @@
   background: white;
   padding: 0 0.3rem;
 }
+.form-group.active label,
+.form-group.has-value label {
+  top: -0.6rem;
+  left: 0.8rem;
+  font-size: 0.8rem;
+  color: #ff6b00;
+}
+
 
 .form-group.active label,
 .form-control:not(:placeholder-shown) + label {
@@ -199,6 +207,7 @@ textarea.form-control {
 
 .emoji {
   font-size: 1.8rem;
+  color: #e55b00;
 }
 
 .demo-text {
@@ -206,6 +215,7 @@ textarea.form-control {
   line-height: 1.6;
   margin-bottom: 1.5rem;
   opacity: 0.9;
+  color: black;
 }
 
 .demo-features {
@@ -311,4 +321,8 @@ textarea.form-control {
   .demo-content h2 {
     font-size: 1.8rem;
   }
+}
+
+.orange-text {
+  color: #ff6b00;
 }
