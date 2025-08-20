@@ -1,0 +1,109 @@
+:root {
+  --orange: #FF6B35;
+  --orange-light: #FFD166;
+  --orange-dark: #E05D2E;
+  --orange-faint: rgba(255, 107, 53, 0.1);
+  --orange-gradient: linear-gradient(135deg, rgba(255, 107, 53, 0.8) 0%, rgba(255, 158, 53, 0.8) 100%);
+  --white: #FFFFFF;
+  --off-white: #F8F9FA;
+  --light-orange: #FFF3EB;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+  color: white;
+  padding: 10rem 0;
+  position: relative;
+  width: 100%;
+}
+
+.teacher-hero-img-container {
+  position: relative;
+}
+
+.floating-badge {
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation */
+@keyframes float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Benefits Section */
+.teacher-benefits-section {
+  background-color: var(--white);
+}
+
+/* Programs Section */
+.programs-section {
+  background-color: var(--light-orange);
+}
+
+.program-card {
+  background: var(--white);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  height: 100%;
+  border: none;
+}
+
+.hover-orange:hover {
+  border-top: 3px solid var(--orange);
+}
+
+/* Curriculum Section */
+.curriculum-section {
+  background-color: var(--white);
+}
+
+/* CTA Section */
+.teacher-cta-section {
+  background-color: var(--orange);
+  color: white;
+  border-radius: 0.5rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .hero-section {
+    padding: 6rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    padding: 4rem 0;
+  }
+
+  .floating-badge {
+    position: relative;
+    right: 0;
+    margin: 0 auto 1rem;
+    width: fit-content;
+  }
+}

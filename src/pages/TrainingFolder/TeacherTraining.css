@@ -1,0 +1,40 @@
+:root {
+  --orange: #fd7e14;
+  --orange-dark: #e8590c;
+  --orange-soft: #fff4e6;
+  --orange-soft-dark: #ffe8cc;
+}
+
+.text-orange { color: var(--orange); }
+.text-orange-dark { color: var(--orange-dark); }
+.bg-orange { background-color: var(--orange); }
+.bg-orange-soft { background-color: var(--orange-soft); }
+
+.border-orange { border-color: var(--orange); }
+
+.text-gradient-orange {
+  background: linear-gradient(90deg, var(--orange), #f76707);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.shadow-xs-hover:hover {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08) !important;
+}
+
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.btn-orange {
+  background-color: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+.btn-orange:hover {
+  background-color: var(--orange-dark);
+  border-color: var(--orange-dark);
+  color: white;
+}

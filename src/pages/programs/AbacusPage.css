@@ -1,0 +1,196 @@
+/* Color Variables */
+:root {
+  --orange: #FF6B35;
+  --orange-light: #FFD166;
+  --orange-dark: #E05D2E;
+  --orange-faint: rgba(255, 107, 53, 0.1);
+  --orange-gradient: linear-gradient(135deg, rgba(255, 107, 53, 0.8) 0%, rgba(255, 158, 53, 0.8) 100%);
+  --white: #FFFFFF;
+  --off-white: #F8F9FA;
+}
+
+/* Hero Section */
+/* Hero Section - Light Orange Version */
+.hero-section.bg-light-orange {
+  background-color: #FFF3EB; /* Very light orange */
+  background-image: linear-gradient(135deg, rgba(255, 235, 224, 0.8) 0%, rgba(255, 248, 240, 0.9) 100%);
+}
+
+.btn-outline-orange {
+  color: var(--orange);
+  border-color: var(--orange);
+  background-color: transparent;
+}
+
+.btn-outline-orange:hover {
+  background-color: var(--orange);
+  color: white;
+}
+
+.stat-item {
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.stat-item:not(:last-child):after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 40px;
+  width: 1px;
+  background-color: rgba(255, 107, 53, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section.bg-light-orange {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  .stat-item {
+    padding: 0 1rem;
+  }
+  
+  .stat-item h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .d-flex.justify-content-center.gap-5 {
+    gap: 1.5rem !important;
+  }
+  
+  .stat-item:after {
+    display: none;
+  }
+}
+
+/* Marquee Testimonials */
+/* Marquee Styles */
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-track {
+  display: flex;
+  animation: scroll 30s linear infinite;
+  width: max-content;
+}
+
+.marquee-slide {
+  flex: 0 0 auto;
+  width: 350px; /* Adjust based on your card width */
+  padding: 0 10px;
+}
+
+.testimonial-card {
+  transition: all 0.3s ease;
+  border-top: 4px solid var(--orange);
+  height: 100%;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 107, 53, 0.1) !important;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .marquee-slide {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marquee-slide {
+    width: 280px;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+}
+/* Light Orange Theme */
+.bg-light-orange {
+  background-color: var(--orange-faint);
+}
+
+.text-orange-light {
+  color: var(--orange-light);
+}
+
+/* Buttons */
+.btn-orange {
+  background-color: var(--orange);
+  color: white;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-orange:hover {
+  background-color: var(--orange-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Cards */
+.benefit-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--white);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-image {
+    text-align: center;
+  }
+  
+  .marquee-item {
+    width: 280px;
+  }
+  
+  .d-flex.gap-5 {
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .marquee-item {
+    width: 240px;
+  }
+}
+

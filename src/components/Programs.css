@@ -96,12 +96,12 @@
 }
 
 .icon-circle {
-  width: 70px;
+  width:     80px;
   height: 70px;
   background: linear-gradient(135deg, #ff6600, #ff8c00);
   border-radius: 50%;
-  margin: 0 auto 25px;
-  display: flex;
+  margin: 0 0 30px 110px;
+
   align-items: center;
   justify-content: center;
   position: relative;
@@ -181,14 +181,14 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .programs-section {
-    padding: 80px 0;
+.section-title {
+    font-size: 1.8rem;
   }
   
-  .section-title {
-    font-size: 2.2rem;
+  .section-subtitle {
+    font-size: 0.95rem;
+    padding: 0 15px;
   }
-  
   .programs-grid {
     grid-template-columns: 1fr;
     max-width: 500px;
@@ -201,11 +201,11 @@
     padding: 25px;
   }
   
-  .section-title {
-    font-size: 2rem;
+ .section-title {
+    font-size: 1.6rem;
   }
   
   .section-subtitle {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }

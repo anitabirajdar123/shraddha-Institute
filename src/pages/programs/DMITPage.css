@@ -1,0 +1,28 @@
+.dmit-page .benefit-icon {
+  width: 300px;
+  height: 200px;
+  max-height: 190px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.dmit-page .benefit-icon:hover {
+  transform: scale(1.05);
+}
+
+.dmit-page .dmit-heading {
+  color: #f97316; /* Orange */
+}
+
+/* Accordion header orange style */
+.dmit-page .accordion-button {
+  color: #f97316; /* Orange */
+  font-weight: 600;
+}
+
+.dmit-page .accordion-button:not(.collapsed) {
+  background-color: #fff7ed; /* Light orange background */
+  color: #f97316;
+  box-shadow: none;
+}

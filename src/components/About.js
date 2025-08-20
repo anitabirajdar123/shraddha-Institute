@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import './About.css';
 import { useInView } from 'react-intersection-observer';

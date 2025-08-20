@@ -1,21 +1,35 @@
-/* Hero Section - Compact Size */
+/* Hero.css */
 .hero-section {
   position: relative;
-  padding: 80px 0; /* Reduced from 120px */
-  height: auto; /* Changed from min-height: 100vh */
+  padding: 100px 0;
+  min-height: 90vh;
   display: flex;
   align-items: center;
   overflow: hidden;
 }
 
-
-/* Content Overlay */
-.hero-content-overlay {
+/* Background Image */
+.hero-bg {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  filter: brightness(0.7);
+}
+
+/* Gradient Overlay */
+.hero-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(0, 0, 0, 0.7) 100%);
   z-index: 1;
 }
 
@@ -25,119 +39,143 @@
   z-index: 2;
 }
 
-/* Text Styles */
+/* Typography */
 .hero-title {
-  font-size: 2.4rem; /* Slightly reduced from 2.8rem */
+  font-size: 3rem;
   font-weight: 800;
   line-height: 1.2;
-  color: #333;
-  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.highlight-orange {
+.text-orange {
   color: #ff6b35;
-  position: relative;
 }
 
-
-
-.highlight-white {
-   color: #ff6b35;
-  position: relative;
+.text-white {
+  color: #fff;
 }
-
-
 
 .hero-subtitle {
-  font-size: 1.1rem; /* Reduced from 1.25rem */
-  color: #555;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
   max-width: 500px;
-  margin-bottom: 1.5rem; /* Adjusted */
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 /* Animation Container */
 .hero-animation {
-  max-width: 120%;
-  height: 650px; /* Fixed height for consistency */
+  max-width: 100%;
+  height: 500px;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
 }
 
+/* Buttons */
 .btn-orange {
   background-color: #ff6b35;
-  color: white; /* Changed to orangered text */
-  padding: 12px 28px;
-  border-radius: 50px;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 8px;
   font-weight: 700;
   border: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
 }
 
 .btn-orange:hover {
   background-color: #e55c2b;
-  color: white; /* Text becomes white on hover */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
 }
 
-.btn-white {
-  background-color: #ff6b35;
-  color: white; /* Changed to orangered text */
-  padding: 12px 28px;
-  border-radius: 50px;
+.btn-outline-white {
+  background-color: transparent;
+  color: white;
+  padding: 15px 35px;
+  border-radius: 8px;
   font-weight: 700;
-  border: none;
+  border: 2px solid white;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
 }
 
-.btn-white:hover {
-  background-color: #e55c2b;
-  color: white; /* Text becomes white on hover */
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+.btn-outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
 }
-/* Responsive Adjustments */
+
+/* Trust Badges */
+.trust-badges .trust-icon {
+  background: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ff6b35;
+}
+
+/* Responsive */
 @media (max-width: 1199px) {
-  .hero-title {
-    font-size: 2rem;
-  }
+  .hero-title { font-size: 2.5rem; }
+  .hero-animation { height: 450px; }
 }
 
 @media (max-width: 991px) {
-  .hero-section {
-    padding: 60px 0;
-  }
-  
-  .hero-title {
-    font-size: 1.8rem;
-  }
+  .hero-section { padding: 80px 0; min-height: auto; }
+  .hero-title { font-size: 2.2rem; }
+  .hero-animation { height: 400px; }
 }
 
 @media (max-width: 767px) {
-  .hero-section {
-    padding: 50px 0;
-  }
-
-  .hero-title {
-    font-size: 1.6rem;
-  }
-
-  .hero-animation {
-    height: 280px;
-    margin-top: 30px;
-  }
+  .hero-section { padding: 60px 0; }
+  .hero-title { font-size: 2rem; text-align: center; }
+  .hero-subtitle { text-align: center; margin-left: auto; margin-right: auto; }
+  .hero-animation { height: 300px; margin-top: 30px; }
+  .btn-orange, .btn-outline-white { padding: 12px 25px; }
 }
 
 @media (max-width: 575px) {
-  .hero-title {
-    font-size: 1.4rem;
+  .hero-title { font-size: 1.8rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .hero-animation { height: 250px; }
+}
+
+@media (max-width: 400px) {
+  .hero-title { font-size: 1.6rem; }
+  .btn-orange, .btn-outline-white { 
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    width: 100%;
   }
-  
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-  
-  .hero-animation {
-    height: 220px;
-  }
+}
+
+/* Add to your Hero.css for better SEO elements */
+.hero-section [itemprop] {
+  display: inline;
+}
+
+/* Hide schema markup from visual display */
+[itemprop][hidden] {
+  display: none;
+}
+
+/* Ensure text remains readable for SEO while being visually hidden */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }

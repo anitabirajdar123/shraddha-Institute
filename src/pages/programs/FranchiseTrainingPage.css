@@ -1,0 +1,233 @@
+
+/* ================= HERO SECTION ================= */
+/* Franchise Hero Section */
+.franchise-hero-section {
+  background: linear-gradient(135deg, #ff6a00, #ff9a44);
+  padding: 100px 0;
+  position: relative;
+  color: white;
+}
+
+.franchise-hero-section h1 {
+  font-size: 2.8rem;
+  line-height: 1.3;
+}
+
+.franchise-hero-section p {
+  font-size: 1.2rem;
+  color: #f8f9fa;
+}
+
+.franchise-hero-img-container {
+  position: relative;
+  display: inline-block;
+}
+
+.franchise-main-img {
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.floating-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: #fff;
+  color: #ff6a00;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn.text-orange {
+  color: #ff6a00 !important;
+}
+
+
+/* ================= SECTION TITLES ================= */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ff6b00;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b00, #ff9e00);
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* ================= BENEFITS SECTION ================= */
+.benefits-section {
+  background: #fff8f0;
+  padding: 80px 20px;
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(90deg, #ff6b00, #ff9e00);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  color: #fff;
+}
+
+/* ================= INVESTMENT & RETURNS ================= */
+.investment-card,
+.returns-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.investment-card:hover,
+.returns-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+.price {
+  color: #ff6b00;
+  font-weight: 700;
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+}
+
+.check-list li::before {
+  content: "✔";
+  color: #ff6b00;
+  margin-right: 10px;
+}
+
+/* Metrics */
+.metric-card {
+  background: #fff8f0;
+  text-align: center;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.metric-card:hover {
+  background: #ffe5cc;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff6b00;
+}
+
+.metric-label {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ================= TRAINING MODULES ================= */
+.module-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  border-top: 5px solid transparent;
+}
+
+.module-card:hover {
+  transform: translateY(-10px);
+  border-top: 5px solid #ff6b00;
+}
+
+.module-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.module-list {
+  padding-left: 18px;
+  color: #666;
+}
+
+/* ================= SUPPORT ACCORDION ================= */
+.support-section {
+  background: #f9fafc;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: #ff6b00 !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: #fff4e6;
+}
+
+/* ================= SUCCESS STORY ================= */
+.success-section blockquote {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #444;
+  border-left: 5px solid #ff6b00;
+  padding-left: 20px;
+}
+
+/* ================= CTA ================= */
+.cta-section {
+  background: linear-gradient(90deg, #ff6b00, #ff9e00);
+  color: #fff;
+  border-radius: 20px;
+  margin-top: 60px;
+}
+
+.cta-section button {
+  border-radius: 30px;
+  padding: 12px 25px;
+  font-weight: 600;
+}
+
+
+/* Testimonials Section */
+.testimonials-section {
+  background: #fff8f0;
+}
+
+.testimonial-card {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+.testimonial-text {
+  font-size: 1rem;
+  font-style: italic;
+  color: #444;
+  line-height: 1.6;
+}
+

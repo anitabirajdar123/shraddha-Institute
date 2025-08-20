@@ -1,0 +1,34 @@
+.blog-page .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #FF6B1D;
+  margin-bottom: 1.5rem;
+}
+
+.blog-page .blog-hero {
+  position: relative;
+}
+
+.blog-page .category-filter button {
+  transition: all 0.3s;
+}
+.blog-page .category-filter button:hover {
+  transform: scale(1.05);
+}
+
+.blog-page .newsletter-section input.form-control {
+  flex: 1;
+  border: none;
+  padding: 0.75rem 1rem;
+}
+.blog-page .newsletter-section input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.blog-page .newsletter-section button {
+  transition: all 0.3s;
+}
+.blog-page .newsletter-section button:hover {
+  transform: scale(1.05);
+}

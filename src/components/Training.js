@@ -26,6 +26,7 @@ const Training = () => {
     <div className="training-page">
       <section className="training-section" id="training">
         <div className="container">
+          {/* Title Section */}
           <div className="title-section">
             <div className="title-content">
               <h1>Shraddha Institute Teacher Training</h1>
@@ -36,7 +37,9 @@ const Training = () => {
             </div>
           </div>
 
+          {/* Content Wrapper */}
           <div className="training-content-wrapper">
+            {/* Training Text */}
             <div className="training-text">
               <div className="section-label">Professional Development</div>
               <h2>
@@ -45,15 +48,19 @@ const Training = () => {
                 Teacher Certification Program
               </h2>
               <p className="lead-text">
-                Elevate your teaching skills with our <strong>Comprehensive Abacus & Vedic Math Certification</strong> program designed specifically for educators.
+                Elevate your teaching skills with our{" "}
+                <strong>Comprehensive Abacus & Vedic Math Certification</strong>{" "}
+                program designed specifically for educators.
               </p>
               
+              {/* Benefits - 2x2 Grid */}
               <div className="benefits-grid">
                 {[
-                  { icon: '🧮', title: 'Abacus', desc: 'Complete 8 Levels techniques' },
-                  { icon: '🔢', title: 'Vedic Math', desc: '8 core formulas & applications' },
-                  { icon: '👩‍🏫', title: 'Pedagogy Training', desc: 'Effective teaching methodologies' },
-                  { icon: '🏫', title: 'Center Support', desc: 'Launch your own training center' }
+                  
+                  { icon: '🧮', title: 'Abacus Training', desc: 'Master all 8 levels of abacus techniques' },
+                  { icon: '🔢', title: 'Vedic Math', desc: 'Learn 16 core sutras & applications' },
+                  { icon: '👩‍🏫', title: 'Teaching Methods', desc: 'Proven pedagogical approaches' },
+                  { icon: '🏫', title: 'Center Setup', desc: 'Guidance for starting your own center' }
                 ].map((benefit, index) => (
                   <div key={index} className="benefit-card">
                     <div className="benefit-icon">{benefit.icon}</div>
@@ -64,6 +71,7 @@ const Training = () => {
               </div>
             </div>
             
+            {/* Illustration */}
             <div className="training-illustration">
               <img 
                 src={trainingIllustration} 

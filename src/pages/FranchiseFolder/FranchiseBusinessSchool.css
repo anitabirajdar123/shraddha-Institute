@@ -1,0 +1,197 @@
+/* Marquee Animation */
+.announcement-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-container {
+  display: flex;
+  width: 100%;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 30s linear infinite;
+  padding-left: 100%;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.marquee-divider {
+  opacity: 0.6;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero-section {
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orange Accent Background */
+/* Hero Section */
+.hero-section {
+  background-color: white;
+  position: relative;
+  padding: 5rem 0;
+}
+
+/* Subtle orange accent shapes */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 152, 56, 0.05);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 152, 56, 0.03);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 3rem 0;
+  }
+  
+  .hero-section::before,
+  .hero-section::after {
+    display: none;
+  }
+  
+  .trust-markers {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .hero-section::before,
+  .hero-section::after {
+    display: none;
+  }
+  
+  .hero-image-container {
+    margin-top: 2rem;
+  }
+}
+
+/* Benefit Cards */
+.benefit-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 152, 56, 0.2);
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(255, 152, 56, 0.15) !important;
+  border-color: rgba(255, 152, 56, 0.4);
+}
+
+.benefit-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 152, 56, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Step Cards */
+.step-card {
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.step-number-circle {
+  width: 60px;
+  height: 60px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.step-arrow {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  animation: bounceX 2s infinite;
+}
+
+@keyframes bounceX {
+  0%, 100% { transform: translateX(0) translateY(-50%); }
+  50% { transform: translateX(10px) translateY(-50%); }
+}
+
+/* Orange Gradient */
+.bg-orange-gradient {
+  background: linear-gradient(135deg, #ff6b35 0%, #e65c00 100%);
+}
+
+/* Text Colors */
+.text-orange-light {
+  color: #ffc078;
+}
+
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Buttons */
+.btn-orange {
+  background: linear-gradient(135deg, #ff6b35, #e65c00);
+  border: none;
+  color: white;
+}
+
+.btn-orange:hover {
+  background: linear-gradient(135deg, #e65c00, #cc5200);
+  color: white;
+}
+
+.shadow-orange {
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .step-arrow {
+    display: none !important;
+  }
+  
+  .marquee-content {
+    animation-duration: 20s;
+  }
+}
