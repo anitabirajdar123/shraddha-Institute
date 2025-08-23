@@ -111,3 +111,226 @@
   margin-right: 10px;
   font-size: 1.3rem;
 }
+
+
+
+/* Tablet Responsive Styles */
+        @media (max-width: 1024px) {
+            .franchise {
+                padding: 50px 20px;
+            }
+            
+            .franchise .heading {
+                font-size: 2.2rem;
+            }
+            
+            .franchise .subheading {
+                font-size: 1.1rem;
+                margin-bottom: 35px;
+            }
+            
+            .franchise .grid {
+                gap: 20px;
+                margin-bottom: 35px;
+            }
+            
+            .franchise .card {
+                padding: 22px;
+            }
+            
+            .franchise .card-icon {
+                font-size: 36px;
+            }
+            
+            .franchise .card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .franchise .package {
+                padding: 25px;
+            }
+            
+            .franchise .package-title {
+                font-size: 1.5rem;
+            }
+            
+            .franchise .package li {
+                font-size: 1.05rem;
+            }
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .franchise {
+                padding: 40px 15px;
+            }
+            
+            .franchise .heading {
+                font-size: 1.9rem;
+                margin-bottom: 12px;
+            }
+            
+            .franchise .subheading {
+                font-size: 1rem;
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+            
+            .franchise .grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 30px;
+                gap: 18px;
+            }
+            
+            .franchise .card {
+                padding: 20px;
+            }
+            
+            .franchise .card-icon {
+                font-size: 34px;
+                margin-bottom: 12px;
+            }
+            
+            .franchise .card h3 {
+                font-size: 1.15rem;
+            }
+            
+            .franchise .card p {
+                font-size: 0.95rem;
+            }
+            
+            .franchise .cta {
+                margin: 25px 0;
+            }
+            
+            .franchise .btn {
+                padding: 11px 25px;
+                font-size: 0.95rem;
+            }
+            
+            .franchise .package {
+                padding: 22px;
+                margin: 25px auto;
+            }
+            
+            .franchise .package-title {
+                font-size: 1.4rem;
+                margin-bottom: 18px;
+            }
+            
+            .franchise .package li {
+                font-size: 1rem;
+                margin: 10px 0;
+            }
+            
+            .franchise .check-icon {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Small Mobile Responsive Styles */
+        @media (max-width: 480px) {
+            .franchise {
+                padding: 35px 12px;
+            }
+            
+            .franchise .heading {
+                font-size: 1.7rem;
+            }
+            
+            .franchise .subheading {
+                font-size: 0.95rem;
+                margin-bottom: 25px;
+            }
+            
+            .franchise .grid {
+                gap: 15px;
+                margin-bottom: 25px;
+            }
+            
+            .franchise .card {
+                padding: 18px 15px;
+                border-radius: 12px;
+            }
+            
+            .franchise .card-icon {
+                font-size: 32px;
+                margin-bottom: 10px;
+            }
+            
+            .franchise .card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+            
+            .franchise .card p {
+                font-size: 0.9rem;
+            }
+            
+            .franchise .cta {
+                margin: 20px 0;
+            }
+            
+            .franchise .btn {
+                padding: 10px 22px;
+                font-size: 0.9rem;
+            }
+            
+            .franchise .package {
+                padding: 20px 18px;
+                margin: 20px auto;
+                border-radius: 12px;
+            }
+            
+            .franchise .package-title {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            
+            .franchise .package li {
+                font-size: 0.95rem;
+                margin: 8px 0;
+            }
+            
+            .franchise .check-icon {
+                font-size: 1.1rem;
+                margin-right: 8px;
+            }
+        }
+        
+        /* Extra Small Devices */
+        @media (max-width: 360px) {
+            .franchise .heading {
+                font-size: 1.6rem;
+            }
+            
+            .franchise .subheading {
+                font-size: 0.9rem;
+            }
+            
+            .franchise .card {
+                padding: 16px 14px;
+            }
+            
+            .franchise .card h3 {
+                font-size: 1.05rem;
+            }
+            
+            .franchise .package {
+                padding: 18px 15px;
+            }
+            
+            .franchise .package-title {
+                font-size: 1.2rem;
+            }
+            
+            .franchise .package li {
+                font-size: 0.9rem;
+            }
+            
+            .franchise .btn {
+                padding: 9px 20px;
+                font-size: 0.88rem;
+            }
+        }

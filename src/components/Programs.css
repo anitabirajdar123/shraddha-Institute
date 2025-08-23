@@ -209,3 +209,159 @@
     font-size: 0.9rem;
   }
 }
+
+
+
+ /* Tablet Responsive Design */
+        @media (max-width: 1024px) {
+            .programs-section {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2.4rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 40px;
+            }
+            
+            .programs-grid {
+                gap: 25px;
+            }
+            
+            .program-card {
+                padding: 25px 20px;
+            }
+            
+            .program-card h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .programs-section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-title::after {
+                width: 80px;
+                bottom: -8px;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+                margin-bottom: 35px;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto;
+                gap: 20px;
+            }
+            
+            .program-card {
+                padding: 25px 20px;
+            }
+            
+            .program-card h3 {
+                font-size: 1.4rem;
+            }
+            
+            .program-card p {
+                font-size: 0.95rem;
+            }
+            
+            .icon-circle {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 20px;
+            }
+        }
+
+        /* Small Mobile Responsive Design */
+        @media (max-width: 480px) {
+            .programs-section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.95rem;
+                margin-bottom: 30px;
+            }
+            
+            .program-card {
+                padding: 20px 15px;
+                border-radius: 20px;
+            }
+            
+            .program-card h3 {
+                font-size: 1.3rem;
+                margin-bottom: 12px;
+            }
+            
+            .program-card p {
+                font-size: 0.9rem;
+                margin-bottom: 20px;
+            }
+            
+            .program-card li {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+                padding-left: 28px;
+            }
+            
+            .program-card li::before {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .icon-circle {
+                width: 65px;
+                height: 65px;
+                margin-bottom: 18px;
+            }
+            
+            .program-card .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Extra Small Mobile Devices */
+        @media (max-width: 360px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .program-card {
+                padding: 18px 12px;
+            }
+            
+            .program-card h3 {
+                font-size: 1.2rem;
+            }
+            
+            .program-card p {
+                font-size: 0.85rem;
+            }
+            
+            .programs-grid {
+                padding: 0 10px;
+            }
+        }

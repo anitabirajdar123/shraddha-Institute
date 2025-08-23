@@ -1,0 +1,100 @@
+/* ================== */
+/* CTA BUTTONS */
+/* ================== */
+.btn-cta {
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.65rem 1.6rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Orange filled button */
+.btn-orange {
+  background-color: #fd7e14; /* Shraddha Orange */
+  color: #fff;
+  border: none;
+}
+
+.btn-orange:hover,
+.btn-orange:focus {
+  background-color: #e67300;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(253, 126, 20, 0.3);
+}
+
+/* White outline button */
+.btn-outline-white {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.btn-outline-white:hover,
+.btn-outline-white:focus {
+  background-color: #fff;
+  color: #fd7e14;
+  border-color: #fd7e14;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(253, 126, 20, 0.2);
+}
+
+/* Icon arrow spacing */
+.btn-cta span {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-cta:hover span {
+  transform: translateX(4px);
+}
+
+/* ================== */
+/* FULL RESPONSIVE SETTINGS */
+/* ================== */
+
+/* Extra small devices (portrait phones, <576px) */
+@media (max-width: 575.98px) {
+  .btn-cta {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+  }
+}
+
+/* Small devices (landscape phones, 576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .btn-cta {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+}
+
+/* Medium devices (tablets, 768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .btn-cta {
+    font-size: 0.95rem;
+    padding: 0.55rem 1.4rem;
+  }
+}
+
+/* Large devices (desktops, 992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .btn-cta {
+    font-size: 1rem;
+    padding: 0.65rem 1.6rem;
+  }
+}
+
+/* Extra large devices (large desktops, ≥1200px) */
+@media (min-width: 1200px) {
+  .btn-cta {
+    font-size: 1.05rem;
+    padding: 0.7rem 1.8rem;
+  }
+}

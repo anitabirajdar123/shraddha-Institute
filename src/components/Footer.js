@@ -10,6 +10,11 @@ import {
 } from 'react-icons/fa';
 import { FiClock } from 'react-icons/fi';
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
+
+
+
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -78,11 +83,10 @@ const Footer = () => {
           <h4>Quick Links</h4>
           <ul className="footer-links">
             <li><a href="/about">About Us</a></li>
-            <li><a href="/courses">Our Courses</a></li>
-           
-           
+           <li><Link to="/programs">Our Programs</Link></li>
+             <li><Link to="/blog">Blog</Link></li>
             <li><a href="/testimonials">Testimonials</a></li>
-            <li><a href="/faq">FAQ</a></li>
+             <li><Link to="/contact">Contact</Link></li>
           </ul>
         </motion.div>
 

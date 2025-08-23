@@ -93,81 +93,120 @@ const AbacusPage = () => {
 </section>
       {/* Benefits Section */}
       <section className="benefits-section py-5 bg-white">
-        <Container>
-          <div className="section-header text-center mb-5">
-            <h2 className="section-title fw-bold display-5 mb-3">Benefits of Abacus Learning</h2>
-            <p className="section-subtitle text-muted fs-5">
-              Our program delivers measurable improvements in multiple cognitive areas
+  <Container>
+    {/* Section Header */}
+    <div className="section-header text-center mb-5">
+      <h2 className="section-title fw-bold display-5 mb-3 text-orange">
+        Benefits of Abacus Learning
+      </h2>
+      <p className="section-subtitle text-muted fs-5">
+        Our program delivers measurable improvements in multiple cognitive areas
+      </p>
+    </div>
+
+    {/* Benefits Grid */}
+    <Row className="g-4">
+      {/* Benefit 1 */}
+      <Col md={6} lg={3}>
+        <div className="benefit-card p-4 rounded-4 h-100 shadow-sm bg-white hover-shadow transition">
+          <div
+            className="icon-wrapper bg-orange-light d-flex justify-content-center align-items-center rounded-circle mb-4 mx-auto"
+            style={{ width: "80px", height: "80px" }}
+          >
+            <img
+              src={benefit1}
+              alt="Mental calculation"
+              className="img-fluid"
+              loading="lazy"
+            />
+          </div>
+          <div className="card-content text-center">
+            <h3 className="h5 fw-bold mb-3 text-dark">
+              Lightning Fast Calculations
+            </h3>
+            <p className="text-secondary mb-0">
+              Students perform complex arithmetic mentally with speed and
+              accuracy, reducing calculator dependency.
             </p>
           </div>
+        </div>
+      </Col>
 
-          <Row className="g-4">
-            <Col md={6} lg={3}>
-              <div className="benefit-card p-4 rounded-3 h-100 bg-gradient-light-hover">
-  <div className="icon-wrapper bg-orange-light bg-gradient-orange rounded-circle p-3 mb-4 mx-auto" style={{width: '80px', height: '80px'}}>
-    <img src={benefit1} alt="Mental calculation" className="img-fluid" loading="lazy" />
-  </div>
-  <div className="card-content text-center">
-    <h3 className="h5 fw-bold mb-3">Lightning Fast Calculations</h3>
-    <p className="text-secondary">
-      Students perform complex arithmetic mentally with speed and accuracy,
-      reducing calculator dependency.
-    </p>
-  </div>
-</div>
-            </Col>
-            {/* Benefit 2 */}
-            <Col md={6} lg={3}>
-              <div className="benefit-card p-4 rounded-3 h-100 border-start border-4 border-orange">
-                <div className="icon-wrapper bg-orange-light rounded-circle p-3 mb-3" style={{width: '80px', height: '80px'}}>
-                  <img src={benefit2} alt="Concentration" className="img-fluid" loading="lazy" />
-                </div>
-                <div className="card-content">
-                  <h3 className="h4 fw-bold mb-3">Enhanced Concentration</h3>
-                  <p className="text-muted">
-                    Regular abacus practice significantly improves attention span, focus,
-                    and visual memory retention.
-                  </p>
-                </div>
-              </div>
-            </Col>
-            {/* Benefit 3 */}
-            <Col md={6} lg={3}>
-              <div className="benefit-card p-4 rounded-3 h-100 border-start border-4 border-orange">
-                <div className="icon-wrapper bg-orange-light rounded-circle p-3 mb-3" style={{width: '80px', height: '80px'}}>
-                  <img src={benefit3} alt="Academic performance" className="img-fluid" loading="lazy" />
-                </div>
-                <div className="card-content">
-                  <h3 className="h4 fw-bold mb-3">Academic Excellence</h3>
-                  <p className="text-muted">
-                    Abacus learners typically show 20-30% improvement in overall academic
-                    performance, especially in mathematics.
-                  </p>
-                </div>
-              </div>
-            </Col>
+      {/* Benefit 2 */}
+      <Col md={6} lg={3}>
+        <div className="benefit-card p-4 rounded-4 h-100 shadow-sm bg-white hover-shadow transition">
+          <div
+            className="icon-wrapper bg-orange-light d-flex justify-content-center align-items-center rounded-circle mb-4 mx-auto"
+            style={{ width: "80px", height: "80px" }}
+          >
+            <img
+              src={benefit2}
+              alt="Concentration"
+              className="img-fluid"
+              loading="lazy"
+            />
+          </div>
+          <div className="card-content text-center">
+            <h3 className="h5 fw-bold mb-3 text-dark">Enhanced Concentration</h3>
+            <p className="text-secondary mb-0">
+              Regular abacus practice significantly improves attention span,
+              focus, and visual memory retention.
+            </p>
+          </div>
+        </div>
+      </Col>
 
-            {/* Benefit 4 */}
-            <Col md={6} lg={3}>
-              <div className="benefit-card p-4 rounded-3 h-100 border-start border-4 border-orange">
-                <div className="icon-wrapper bg-orange-light rounded-circle p-3 mb-3" style={{width: '80px', height: '80px'}}>
-                  <img src={benefit4} alt="Confidence" className="img-fluid" loading="lazy" />
-                </div>
-                <div className="card-content">
-                  <h3 className="h4 fw-bold mb-3">Boosted Confidence</h3>
-                  <p className="text-muted">
-                    Children gain tremendous self-confidence as they master skills their
-                    peers find challenging.
-                  </p>
-                </div>
-              </div>
-            </Col>
+      {/* Benefit 3 */}
+      <Col md={6} lg={3}>
+        <div className="benefit-card p-4 rounded-4 h-100 shadow-sm bg-white hover-shadow transition">
+          <div
+            className="icon-wrapper bg-orange-light d-flex justify-content-center align-items-center rounded-circle mb-4 mx-auto"
+            style={{ width: "80px", height: "80px" }}
+          >
+            <img
+              src={benefit3}
+              alt="Academic performance"
+              className="img-fluid"
+              loading="lazy"
+            />
+          </div>
+          <div className="card-content text-center">
+            <h3 className="h5 fw-bold mb-3 text-dark">Academic Excellence</h3>
+            <p className="text-secondary mb-0">
+              Abacus learners typically show 20–30% improvement in overall
+              academic performance, especially in mathematics.
+            </p>
+          </div>
+        </div>
+      </Col>
 
-            {/* Other benefit cards remain the same */}
-            {/* ... */}
-          </Row>
-        </Container>
-      </section>
+      {/* Benefit 4 */}
+      <Col md={6} lg={3}>
+        <div className="benefit-card p-4 rounded-4 h-100 shadow-sm bg-white hover-shadow transition">
+          <div
+            className="icon-wrapper bg-orange-light d-flex justify-content-center align-items-center rounded-circle mb-4 mx-auto"
+            style={{ width: "80px", height: "80px" }}
+          >
+            <img
+              src={benefit4}
+              alt="Confidence"
+              className="img-fluid"
+              loading="lazy"
+            />
+          </div>
+          <div className="card-content text-center">
+            <h3 className="h5 fw-bold mb-3 text-dark">Boosted Confidence</h3>
+            <p className="text-secondary mb-0">
+              Children gain tremendous self-confidence as they master skills
+              their peers find challenging.
+            </p>
+          </div>
+        </div>
+      </Col>
+    </Row>
+  </Container>
+</section>
+
 
       {/* Testimonial Marquee Section */}
      <section className="testimonial-marquee py-5 bg-light-orange">

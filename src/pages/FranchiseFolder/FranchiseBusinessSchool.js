@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { FaSchool, FaChartLine, FaHandsHelping, FaChalkboardTeacher, FaAward, FaUsers } from 'react-icons/fa';
-import { IoIosArrowForward, IoMdSchool } from 'react-icons/io';
+import { IoIosArrowForward, IoMdSchool, IoIosAlert } from 'react-icons/io';
 import './FranchiseBusinessSchool.css';
 
 import BusinessSchoolTestimonials from "./BusinessSchoolTestimonials";
@@ -23,7 +23,7 @@ const FranchiseBusinessSchool = () => {
     },
     {
       icon: <FaHandsHelping size={42} className="text-orange" />,
-      title: 'Complete Setup Support',
+      title: 'Setup Support',
       text: 'From infrastructure to marketing — we guide your entire journey.',
       stat: '95% Success Rate'
     },
@@ -56,6 +56,24 @@ const FranchiseBusinessSchool = () => {
     }
   ];
 
+  // Marquee announcement state
+  const [currentAnnouncement, setCurrentAnnouncement] = useState(0);
+  
+  const announcements = [
+    "Limited Time Offer: 20% Off Franchise Fee",
+    "Exclusive Territory Protection Available",
+    "Free Teacher Training for First 10 Partners",
+    "Complete Marketing Support Included"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentAnnouncement((prev) => (prev + 1) % announcements.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [announcements.length]);
+
   return (
     <>
       <Helmet>
@@ -77,92 +95,70 @@ const FranchiseBusinessSchool = () => {
 
       <div className="franchise-business-page">
         {/* Animated Marquee */}
-        <div className="announcement-marquee bg-orange-gradient text-white py-3">
-          <div className="marquee-container">
-            <div className="marquee-content">
-              {[...Array(4)].map((_, i) => (
-                <React.Fragment key={i}>
-                  <span className="marquee-item">
-                    <span className="badge bg-white text-orange me-2">NEW</span>
-                    Limited Time Offer: 20% Off Franchise Fee
-                  </span>
-                  <span className="marquee-divider mx-4">•</span>
-                  <span className="marquee-item">
-                    <span className="badge bg-white text-orange me-2">HOT</span>
-                    Exclusive Territory Protection Available
-                  </span>
-                  <span className="marquee-divider mx-4">•</span>
-                </React.Fragment>
-              ))}
-            </div>
-          </div>
+        <div className="announcement-bar bg-orange text-white py-2">
+  <Container>
+    <div className="announcement-scroll d-flex align-items-center">
+      <span className="badge bg-white text-orange me-2 flex-shrink-0">⏳ Limited Time</span>
+      <div className="announcement-marquee flex-grow-1">
+        <div className="announcement-track">
+          <span className="announcement-text me-5">
+            Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
+          </span>
+          {/* Duplicate text for continuous scrolling */}
+          <span className="announcement-text me-5">
+            Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
+          </span>
         </div>
-
-        {/* Hero Section */}
-       {/* Hero Section */}
-{/* Hero Section */}
-<section className="hero-section py-5 position-relative">
-  {/* Very subtle orange wash */}
-  <div className="position-absolute top-0 start-0 w-100 h-100" style={{
-    background: 'linear-gradient(135deg, rgba(255,237,222,0.2) 0%, rgba(255,255,255,1) 70%)',
-    zIndex: -1
-  }}></div>
-
-  <Container className="text-center">
-    <div className="mx-auto" style={{ maxWidth: '800px' }}>
-      <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-4">
-        <FaSchool className="me-2" /> For Educational Institutions
-      </span>
-      
-      <h1 className="display-3 fw-bold mb-4">
-        Transform Your School with <span className="text-orange">Our Math Programs</span>
-      </h1>
-      
-      <p className="lead mb-4 text-muted mx-auto">
-        Partner with India's leading Abacus & Vedic Math institution to enhance 
-        student outcomes with our proven curriculum and teacher training system.
-      </p>
-      
-      <div className="d-flex flex-wrap gap-3 justify-content-center mb-5">
-        <Button 
-          variant="orange" 
-          size="lg" 
-          className="rounded-pill px-4 fw-semibold d-flex align-items-center mx-2 mb-2"
-        >
-          Partner With Us <IoIosArrowForward className="ms-2" />
-        </Button>
-        
-        <Button 
-          variant="outline-secondary" 
-          size="lg" 
-          className="rounded-pill px-4 fw-semibold mx-2 mb-2"
-        >
-          Learn More
-        </Button>
-      </div>
-      
-      <div className="trust-markers d-flex flex-wrap gap-4 justify-content-center">
-        {[
-          "NEP 2020 Aligned Curriculum",
-          "100+ Partner Schools", 
-          "40%+ Math Improvement",
-          "5-Star Franchise Rating"
-        ].map((item, i) => (
-          <div key={i} className="d-flex align-items-center text-dark small">
-            <span className="bg-orange text-white rounded-circle d-flex align-items-center justify-content-center me-2" style={{
-              width: '24px',
-              height: '24px',
-              fontSize: '12px'
-            }}>
-              ✓
-            </span>
-            {item}
-          </div>
-        ))}
       </div>
     </div>
   </Container>
-</section>
+</div>
+
+
+        {/* Hero Section */}
+        <section className="hero-section py-5 position-relative">
+          {/* Very subtle orange wash */}
+          <div className="position-absolute top-0 start-0 w-100 h-100" style={{
+            background: 'linear-gradient(135deg, rgba(255,237,222,0.2) 0%, rgba(255,255,255,1) 70%)',
+            zIndex: -1
+          }}></div>
+
+          <Container className="text-center">
+            <div className="mx-auto" style={{ maxWidth: '800px' }}>
+              <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-4">
+                <FaSchool className="me-2" /> For Educational Institutions
+              </span>
+              
+              <h1 className="display-3 fw-bold mb-4">
+                Transform Your School with <span className="text-white">Our Math Programs</span>
+              </h1>
+              
+              <p className="lead mb-4 text-muted mx-auto">
+                Partner with India's leading Abacus & Vedic Math institution to enhance 
+                student outcomes with our proven curriculum and teacher training system.
+              </p>
+              
+              <div className="d-flex flex-wrap gap-3 justify-content-center mb-5">
+                <Button 
+                  variant="orange" 
+                  size="lg" 
+                  className="rounded-pill px-4 fw-semibold d-flex align-items-center mx-2 mb-2"
+                >
+                  Partner With Us <IoIosArrowForward className="ms-2" />
+                </Button>
+                
+                <Button 
+                  variant="outline-secondary" 
+                  size="lg" 
+                  className="rounded-pill px-4 fw-semibold mx-2 mb-2"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </Container>
+        </section>
+
         {/* Benefits Section */}
         <section className="benefits-section py-5 bg-light">
           <Container>
@@ -183,7 +179,7 @@ const FranchiseBusinessSchool = () => {
                     <div className="benefit-icon-wrapper mb-4">
                       {benefit.icon}
                     </div>
-                    <h3 className="h4 fw-bold mb-3">{benefit.title}</h3>
+                    <h3 className="h4 fw-bold mb-3 responsive-heading">{benefit.title}</h3>
                     <p className="text-muted mb-4">{benefit.text}</p>
                     <div className="benefit-stat bg-orange-soft text-orange rounded-pill px-3 py-1 d-inline-block">
                       {benefit.stat}

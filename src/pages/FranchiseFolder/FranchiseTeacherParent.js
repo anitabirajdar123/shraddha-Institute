@@ -77,14 +77,17 @@ const FranchiseTeacherParent = () => {
 
       <div className="franchise-teacher-parent-page">
         {/* Announcement Bar */}
-        <div className="announcement-bar bg-orange text-white py-2">
-          <Container>
-            <div className="d-flex justify-content-center align-items-center">
-              <span className="badge bg-white text-orange me-2">Limited Time</span>
-              <span className="fw-medium">Enroll now and get 20% off franchise fee! Offer ends soon.</span>
-            </div>
-          </Container>
-        </div>
+       <div className="announcement-bar bg-orange text-white py-2 overflow-hidden">
+  <Container>
+    <div className="announcement-scroll d-flex align-items-center">
+      <span className="badge bg-white text-orange me-2 flex-shrink-0">⏳ Limited Time</span>
+      <span className="announcement-text fw-medium">
+        Enroll now and get <span className="text-danger">20% OFF</span> franchise fee! Offer ends soon.
+      </span>
+    </div>
+  </Container>
+</div>
+
 
         {/* Hero Section */}
        {/* Hero Section */}
@@ -119,14 +122,7 @@ const FranchiseTeacherParent = () => {
             Download Brochure
           </Button>
         </div>
-        <div className="trust-markers d-flex flex-wrap gap-3 justify-content-center">
-          <div className="trust-item bg-white bg-opacity-10 text-white rounded-pill px-3 py-1">
-            <span className="trust-icon">✓</span> 500+ Franchise Partners
-          </div>
-          <div className="trust-item bg-white bg-opacity-10 text-white rounded-pill px-3 py-1">
-            <span className="trust-icon">✓</span> PAN India Presence
-          </div>
-        </div>
+       
       </Col>
     </Row>
   </Container>
@@ -140,30 +136,32 @@ const FranchiseTeacherParent = () => {
       <span className="badge bg-orange-soft text-orange rounded-pill px-3 py-2 mb-3 d-inline-block">
         Why Choose Us
       </span>
-      <h2 className="display-5 fw-bold mb-3">Educator-Focused Franchise Benefits</h2>
+      <h2 className="h3 h-md-2 fw-bold mb-3">Educator-Focused Franchise Benefits</h2>
       <p className="lead text-muted mx-auto" style={{ maxWidth: '700px' }}>
         Everything you need to succeed as an education entrepreneur
       </p>
     </div>
-    
-    <Row className="g-4">
+
+    <Row className="g-3 g-md-4">
       {benefits.map((benefit, index) => (
-        <Col md={6} lg={3} key={index}>
+        <Col xs={12} sm={6} lg={3} key={index}>
           <div className="benefit-card h-100 border-0 shadow-sm-hover transition-all">
+            
             {/* Image at top */}
-            <div className="benefit-img-container" style={{ height: '150px' }}>
+            <div className="benefit-img-container">
               <img 
                 src={benefit.image} 
                 alt={benefit.title} 
-                className="benefit-img w-100 h-100"
+                className="benefit-img w-100"
                 loading="lazy"
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', height: 'auto', maxHeight: '200px' }}
               />
             </div>
             
             {/* Content below */}
             <div className="benefit-content p-3">
-              <h3 className="h5 mb-2 fw-bold">{benefit.title}</h3>
+             <h3 className="h6 fw-bold mb-2 custom-margin">{benefit.title}</h3>
+
               <p className="mb-0 text-muted small">{benefit.desc}</p>
             </div>
           </div>
@@ -172,6 +170,7 @@ const FranchiseTeacherParent = () => {
     </Row>
   </Container>
 </section>
+
 
 
         {/* Steps Section */}
